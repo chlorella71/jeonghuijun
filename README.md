@@ -12,6 +12,7 @@ Spring boot 프로젝트 시작
 
 ### 2025.08.28(thu)
 - Member Enity 생성
+```sql
 create table members (
     id bigint primary key,
     email varchar(320) not null unique,
@@ -23,13 +24,19 @@ create table members (
 
 -- 인덱스 (UniqueConstraint)
 create unique index ux_members_email on members (email);
+```
 
 - 패키지 구조
-  - entity
-  - controller
-    - dto
-  - service
-  - repository
+```text
+src
+├─member
+│  ├─entity
+│  ├─controller
+│      └─dto
+│  ├─service
+│  └─repository
+└─Application.java
+```
  
 - API
   - url: http://localhost:8080
